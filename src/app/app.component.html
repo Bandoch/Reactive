@@ -2,16 +2,24 @@
   <form [formGroup] = "rForm" (ngSubmit)="addPost(rForm.value)">
     <div class="form-container">
       <div class="row columns">
-        <h1> Reactive Form </h1>
+        <h1> Cadastro </h1>
         
-        <label>Name
+        <label>Nome
           <input type="text" formControlName="name">
         </label>
         
         <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls ['name'].touched">{{ titleAlert }}
-        </div>
+          </div>
+        
+        <label>CNPJ
+          <input type="number" formControlName="cnpj">
+        </label>
+        
+        <div class="alert" *ngIf="!rForm.controls['cnpj'].valid && rForm.controls ['cnpj'].touched">{{ titleAlert3 }}
+          </div>
+       
 
-        <label>Description
+        <label>Descrição
           <textarea formControlName="description"></textarea>
         </label>
 
@@ -19,7 +27,7 @@
           </div>
   
 
-        <label for="validate">Minimum of 3 Characters</label>
+        <label for="validate">Mínimo de 3 caracteres</label>
         <input type="checkbox" name="validate" formControlName="validate" value="1"> On
 
         <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">

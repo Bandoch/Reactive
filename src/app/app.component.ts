@@ -13,16 +13,24 @@ export class AppComponent {
   post:any;
   description:string = '';
   name:string = '';
+  cnpj:number[];
   titleAlert:string ='Esse campo é obrigatório.';
   titleAlert2:string = 'Você precisa adicionar uma descrição entre 20 e 300 caracteres';
-
+  titleAlert3:string = 'Você precisa fornecer seu CNPJ.'
   constructor(private fb:FormBuilder) {
 
+  
     this.rForm = fb.group ({
       'name': [null, Validators.required],
       'description': [null,Validators.compose ([Validators.required, Validators.minLength(20), Validators.maxLength(300)])],
+      'cnpj':[null,Validators.compose([Validators.required, Validators.maxLength(14)])],
       'validate' : ''
     });
+  }
+
+  getCnpj() {
+   
+
   }
 
   ngOnInit() {
@@ -44,6 +52,7 @@ export class AppComponent {
   addPost(post) {
     this.description = post.description;
     this.name = post.name;
+    this.cnpj = post.cnpj;
   }
 }
 

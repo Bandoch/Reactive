@@ -2,6 +2,12 @@ import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 
+describe('Component:AppComponent',() => {
+  it ('should add 1 + 1', () => {
+    expect(1 + 1).toEqual(3);
+  });
+});
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
