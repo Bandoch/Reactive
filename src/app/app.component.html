@@ -11,11 +11,11 @@
         <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls ['name'].touched">{{ titleAlert }}
           </div>
         
-        <label>CNPJ
-          <input type="number" formControlName="cnpj">
+        <label>URL
+          <input type="string" formControlName="url">
         </label>
         
-        <div class="alert" *ngIf="!rForm.controls['cnpj'].valid && rForm.controls ['cnpj'].touched">{{ titleAlert3 }}
+        <div class="alert" *ngIf="!rForm.controls['url'].valid && rForm.controls ['url'].touched">{{ titleAlert3 }}
           </div>
        
 

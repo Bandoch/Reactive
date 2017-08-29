@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidateUrl } from './validators/url.validator';
 
 @Component({
   selector: 'app-root',
@@ -13,27 +13,24 @@ export class AppComponent {
   post:any;
   description:string = '';
   name:string = '';
-  cnpj:number[];
+  url:string = '';
+  cnpj:any;
   titleAlert:string ='Esse campo é obrigatório.';
   titleAlert2:string = 'Você precisa adicionar uma descrição entre 20 e 300 caracteres';
-  titleAlert3:string = 'Você precisa fornecer seu CNPJ.'
+  titleAlert3:string = 'Você precisa fornecer sua URL.'
+  
   constructor(private fb:FormBuilder) {
-
   
     this.rForm = fb.group ({
+       
+       url: ['', [Validators.required, ValidateUrl]],
       'name': [null, Validators.required],
       'description': [null,Validators.compose ([Validators.required, Validators.minLength(20), Validators.maxLength(300)])],
-      'cnpj':[null,Validators.compose([Validators.required, Validators.maxLength(14)])],
       'validate' : ''
     });
   }
-
-  getCnpj() {
-   
-
-  }
-
   ngOnInit() {
+      
 
     this.rForm.get('validate').valueChanges.subscribe(
       (validate) => {
