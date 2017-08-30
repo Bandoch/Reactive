@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { ValidateCnpj } from './validators/cnpj.validator';
 import {NgxBrValidators} from "ngx-br/ngx-br-validators";
 
 @Component({
