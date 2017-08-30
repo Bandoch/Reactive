@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Http } from '@angular/http'
 
+import { NgxBrModule } from 'ngx-br';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,8 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    NgxBrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

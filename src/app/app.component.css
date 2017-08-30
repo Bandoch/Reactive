@@ -15,10 +15,6 @@
     animation: 2s alertAnim forwards;
 }
 
-.form-container .alert{
-    background: #72728F;
-}
-
 .button {
     margin-top: 3rem;
 }
