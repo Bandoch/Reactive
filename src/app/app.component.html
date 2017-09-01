@@ -17,6 +17,13 @@
         
         <div class="alert" *ngIf="!rForm.controls['cnpj'].valid && rForm.controls ['cnpj'].touched">{{ titleAlert3 }}
           </div>
+        
+          <label>CPF
+          <input type="text" formControlName="numero">
+        </label>
+        
+        <div class="alert" *ngIf="!rForm.controls['numero'].valid && rForm.controls ['numero'].touched">{{ titleAlert4 }}
+          </div>
        
 
         <label>Descrição

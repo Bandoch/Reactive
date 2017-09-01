@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import {NgxBrValidators} from "ngx-br/ngx-br-validators";
+import { ValidateNumber } from './validators/numero.validator';
 
 @Component({
 	selector: 'app-root',
@@ -14,9 +15,11 @@ export class AppComponent {
 	description:string = '';
 	name:string = '';
 	cnpj:any;
+	numero:number;
 	titleAlert:string ='Esse campo é obrigatório.';
 	titleAlert2:string = 'Você precisa adicionar uma descrição entre 20 e 300 caracteres';
 	titleAlert3:string = 'Você precisa fornecer seu CNPJ.'
+	titleAlert4:string = 'Forneça um número.'
 	constructor(private fb:FormBuilder) {
 
 	
@@ -24,14 +27,11 @@ export class AppComponent {
 			'name': [null, Validators.required],
 			'description': [null,Validators.compose ([Validators.required, Validators.minLength(20), Validators.maxLength(300)])],
 			'cnpj':[null,[Validators.required, NgxBrValidators.cnpj()]],
+			'numero': [null,[Validators.required,ValidateNumber ]],
 			'validate' : ''
 		});
 	}
 
-	getCnpj() {
-	 
-
-	}
 
 	ngOnInit() {
 
